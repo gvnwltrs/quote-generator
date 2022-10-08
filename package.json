@@ -1,0 +1,23 @@
+{
+  "name": "quote-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvnwltrs/quote-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvnwltrs/quote-generator/issues"
+  },
+  "homepage": "https://github.com/gvnwltrs/quote-generator#readme",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}
