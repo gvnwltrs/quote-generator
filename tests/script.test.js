@@ -1,5 +1,8 @@
+// const fs = require("fs"); 
+// window.document.body.innerHTML = fs.readFileSync("./index.html");
+
+
 let quoteGenerator = require('../script.js');
-// import { apiQuotes }  from '../script.js'
 
 describe('quote generator', () => {
 
@@ -15,5 +18,9 @@ describe('quote generator', () => {
         quoteGenerator.getQuotes();
         expect(quoteGenerator.newQuote()).toBeDefined();
     });
+
+    // test('should have constant for quote container', () => {
+    //     expect(quoteGenerator.quoteContainer).toBeDefined();
+    // })
    
 });
