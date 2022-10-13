@@ -60,6 +60,4 @@ getQuotes();
 
 
 // Tests 
-if (typeof module === 'object') {
-    module.exports = { apiQuotes, newQuote, getQuotes, quoteContainer}; 
-}
+export { apiQuotes, newQuote, getQuotes }
