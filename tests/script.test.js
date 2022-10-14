@@ -1,12 +1,12 @@
 
 import fs from 'fs';
 import path from 'path';
-import { Window } from 'happy-dom'
+import { Window } from 'happy-dom';
 
-import {apiQuotes, getQuotes, newQuote} from '../script.js';
-import { vi } from 'vitest';
+import { expect, it, describe, vi } from 'vitest';
 
-const htmlDocPath = path.join(process.cwd(), '../index.html');
+const htmlDocPath = path.join(process.cwd(), 'index.html');
+console.log(htmlDocPath);
 const htmlDocumentContent = fs.readFileSync(htmlDocPath).toString();
 
 const window = new Window();
@@ -14,23 +14,33 @@ const document = window.document;
 document.write(htmlDocumentContent);
 vi.stubGlobal('document', document);
 
+import {apiQuotes, getQuotes, newQuote, quoteContainer, loader, loading, complete} from '../script.js';
+import { quote } from 'shell-quote';
+
 describe('quote generator', () => {
     
-    test('should have list declared for api quotes', () => {
+    it('should have list declared for api quotes', () => {
         expect(apiQuotes).toStrictEqual([]);
     });
 
-    test('should have a get quotes function defined that sets the api quote array', () => {
+    it('should have a get quotes function defined that sets the api quote array', () => {
         expect(getQuotes()).toBeDefined();
     });
     
-    test('should have a new quote function defined that randomly grabs a quote', () => {
-        getQuotes();
-        expect(newQuote()).toBeDefined();
+    it('should have constant for quote container', () => {
+        expect(quoteContainer).toBeDefined();
     });
 
-    // test('should have constant for quote container', () => {
-    //     expect(quoteGenerator.quoteContainer).toBeDefined();
-    // })
+    it('should have loader for new incoming quotes', () => {
+        expect(loader).toBeDefined();
+    });
+
+    it('loader function should run loader event', () => {
+        expect(loading).toBeDefined();
+    });
+    
+    it('loader event should stop and present quote', () => {
+        expect(complete()).toBeDefined();
+    });
    
 });
