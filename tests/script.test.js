@@ -14,7 +14,7 @@ const document = window.document;
 document.write(htmlDocumentContent);
 vi.stubGlobal('document', document);
 
-import {apiQuotes, getQuotes, newQuote, quoteContainer, loader, loading, complete} from '../script.js';
+import {apiQuotes, getQuotes, newQuote, quoteContainer, loader, showLoadingSpinner, removeLoadingSpinner} from '../script.js';
 import { quote } from 'shell-quote';
 
 describe('quote generator', () => {
@@ -36,11 +36,11 @@ describe('quote generator', () => {
     });
 
     it('loader function should run loader event', () => {
-        expect(loading).toBeDefined();
+        expect(showLoadingSpinner()).toBeDefined();
     });
     
     it('loader event should stop and present quote', () => {
-        expect(complete()).toBeDefined();
+        expect(removeLoadingSpinner()).toBeDefined();
     });
    
 });
