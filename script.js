@@ -71,6 +71,8 @@ function tweetQuote() {
     window.open(twitterUrl, '_blank'); 
 }
 
+// Telegram Quote
+
 // Event Listeners 
 newQuoteBtn.addEventListener('click', newQuote); 
 twitterBtn.addEventListener('click', tweetQuote);
